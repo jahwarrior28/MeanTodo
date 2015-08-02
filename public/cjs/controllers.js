@@ -29,7 +29,7 @@ todoApp.controller('TodoCtrl', function($rootScope, $scope, todosFactory){
 			isCompleted: cbk,
 			todo: _t.todo
 		}).then(function(data){
-			if(data.data.updatedExisting){
+			if(data.data.nModified == 1){
 				_t.isCompleted = cbk;
 			}else{
 				alert('Oops something went wrong!');
